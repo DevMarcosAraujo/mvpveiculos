@@ -1,0 +1,150 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    padding: 20px 0;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajuste o tamanho da logo conforme necessário */
+}
+
+/* Desktop Navigation */
+.desktop-nav ul {
+    display: flex;
+    list-style: none; /* Remove os pontos de lista */
+    padding: 0;
+    margin: 0;
+}
+
+.desktop-nav li, .nav-right li {
+    margin-left: 30px; /* Espaçamento entre os itens */
+}
+
+.desktop-nav a, .nav-right a {
+    color: #d1d1d1;  /* Cor padrão dos links */
+    font-size: 18px;
+    text-decoration: none;  /* Remove as linhas de sublinhado */
+}
+
+.desktop-nav a:hover, .nav-right a:hover {
+    color: #0c70f2;  /* Cor de hover para todos os links */
+}
+
+/* Mobile Menu Icon */
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    width: 35px;
+    height: 25px;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu-icon .bar {
+    width: 100%;
+    height: 5px;
+    background-color: #d1d1d1;  /* Cor das barras */
+    margin: 6px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animação de transformação quando o menu está ativo */
+.mobile-menu-icon.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg); /* Barra superior */
+}
+
+.mobile-menu-icon.active .bar:nth-child(2) {
+    opacity: 0; /* Barra do meio desaparece */
+}
+
+.mobile-menu-icon.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg); /* Barra inferior */
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 20px;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-nav li {
+    margin-bottom: 20px;
+}
+
+.mobile-nav a {
+    color: #d1d1d1;
+    font-size: 20px;
+    text-decoration: none;  /* Remove as linhas de sublinhado no mobile */
+}
+
+.mobile-nav a:hover {
+    color: #0c70f2;
+}
+
+/* Botão de fechar o menu mobile */
+.close-btn {
+    color: #d1d1d1;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.close-btn:hover {
+    color: #0c70f2;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none; /* Esconde o menu desktop */
+    }
+
+    .nav-right {
+        display: none; /* Esconde a navegação da direita */
+    }
+
+    .mobile-menu-icon {
+        display: block; /* Exibe o ícone do menu mobile */
+    }
+
+    .mobile-nav.active {
+        display: block; /* Exibe o menu mobile quando ativado */
+    }
+}
